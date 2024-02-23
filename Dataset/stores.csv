@@ -1,0 +1,51 @@
+Store_ID,Store_Name,Store_City,Store_Location,Store_Open_Date
+1,Guadalajara 1,Guadalajara,Residential,9/18/1992
+2,Monterrey 1,Monterrey,Residential,4/27/1995
+3,Guadalajara 2,Guadalajara,Commercial,12/27/1999
+4,Saltillo 1,Saltillo,Downtown,1/1/2000
+5,La Paz 1,La Paz,Downtown,5/31/2001
+6,Mexicali 1,Mexicali,Commercial,12/13/2003
+7,Monterrey 2,Monterrey,Downtown,12/25/2003
+8,Pachuca 1,Pachuca,Downtown,10/14/2004
+9,Ciudad de Mexico 1,Cuidad de Mexico,Downtown,10/15/2004
+10,Campeche 1,Campeche,Downtown,1/14/2005
+11,Cuernavaca 1,Cuernavaca,Downtown,4/19/2005
+12,Chetumal 1,Chetumal,Downtown,5/5/2006
+13,Mexicali 2,Mexicali,Downtown,8/30/2006
+14,Guanajuato 1,Guanajuato,Downtown,1/31/2007
+15,Tuxtla Gutierrez 1,Tuxtla Gutierrez,Downtown,3/5/2007
+16,San Luis Potosi 1,San Luis Potosi,Downtown,5/19/2007
+17,Toluca 1,Toluca,Downtown,12/9/2007
+18,Merida 1,Merida,Downtown,8/22/2008
+19,Puebla 1,Puebla,Commercial,12/16/2008
+20,Zacatecas 1,Zacatecas,Downtown,5/29/2009
+21,Santiago 1,Santiago,Downtown,11/23/2009
+22,Guanajuato 2,Guanajuato,Commercial,3/29/2010
+23,Chihuahua 1,Chihuahua,Commercial,6/12/2010
+24,Aguascalientes 1,Aguascalientes,Downtown,7/31/2010
+25,Ciudad Victoria 1,Ciudad Victoria,Downtown,9/8/2010
+26,Campeche 2,Campeche,Commercial,9/15/2010
+27,Oaxaca 1,Oaxaca,Downtown,10/2/2010
+28,Puebla 2,Puebla,Downtown,4/1/2011
+29,Xalapa 1,Xalapa,Commercial,6/21/2011
+30,Guadalajara 3,Guadalajara,Airport,10/20/2011
+31,Ciudad de Mexico 2,Cuidad de Mexico,Airport,5/4/2012
+32,Hermosillo 1,Hermosillo,Residential,8/31/2012
+33,Monterrey 3,Monterrey,Airport,3/17/2013
+34,Villahermosa 1,Villahermosa,Downtown,6/7/2013
+35,Chilpancingo 1,Chilpancingo,Downtown,6/11/2013
+36,Morelia 1,Morelia,Downtown,7/1/2013
+37,Ciudad de Mexico 3,Cuidad de Mexico,Residential,11/28/2013
+38,Chihuahua 2,Chihuahua,Downtown,3/18/2014
+39,Xalapa 2,Xalapa,Downtown,4/21/2014
+40,Toluca 2,Toluca,Commercial,5/27/2014
+41,Hermosillo 2,Hermosillo,Downtown,6/1/2014
+42,Hermosillo 3,Hermosillo,Commercial,6/27/2014
+43,Durango 1,Durango,Downtown,6/30/2014
+44,Puebla 3,Puebla,Residential,12/27/2014
+45,Ciudad de Mexico 4,Cuidad de Mexico,Commercial,6/21/2015
+46,Guadalajara 4,Guadalajara,Downtown,10/31/2015
+47,Monterrey 4,Monterrey,Commercial,11/21/2015
+48,Saltillo 2,Saltillo,Commercial,3/23/2016
+49,Culiacan 1,Culiacan,Downtown,5/10/2016
+50,Guanajuato 3,Guanajuato,Residential,5/18/2016
