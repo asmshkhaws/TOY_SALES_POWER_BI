@@ -206,7 +206,6 @@ At Last format complete page for colours and gradients accordingly
     (b) To calculate avg daily units sold in last 30 days, Create measure and add to the matrix table
 
         Avg Daiy Units Sold = CALCULATE(AVERAGEX(ALLSELECTED(Dates[Date]),[Units]),DATESBETWEEN(Dates[Date],[Max Sales Date]-30, [Max Sales Date]))
- [Stock_On_Hand])
      
     (c) To calculate days of inventory left, Create measure and add to the matrix table
 
@@ -231,9 +230,94 @@ At Last format complete page for colours and gradients accordingly
         Days of Inventory Left = IF([Avg Daiy Units Sold]=0,BLANK()),
                                  DIVIDE([Inventory in Hand],[Avg Daiy Units Sold])
  
-     (e) Format your Visual -- Row Header -- Option -- Off (Stepped layout) 
+    (e) Format your Visual -- Row Header -- Option -- Off (Stepped layout) 
  
+### 6. Steps for Building a Goal Projection Page        
+           
+- Step 1 : Add Filter
+            
+    (a) Apply filter in this pages by dragging (Year) to filter on this pages “Year is 2023”
+
+
+- Step 2 : Add Table so that we can create Forecast Chart based on New Table Values (later delete it):
+
+    (a)  Drag  and drop Dates[Date], Uncheck Date Hierarchy
+
+    (b) Home -- Enter Data -- Name (_Measures_04) -- Load.
+    Create New Measure
+
+        YTD Day Count = TOTALYTD(DISTINCTCOUNT(Sales[Date]),Dates[Date])
+    
+    (c) Calculate Remaining Days
+
+        Remaining Days = TOTALYTD(DISTINCTCOUNT(Dates[Date]),Dates[Date])-[YTD Day Count]
+
+    (d) Drag and drop YTD Day Count, Remaining Days, Revenue, Running Total Revenue
+
+    (e) Calculate Average Daily Revenue
+
+        Avg Daily Revenue = DIVIDE([Running Total Revenue],[YTD Day Count])
+    
+    (f) Now we require last average revenue (i.e. 25,502 @ 30/09/2023)
         
+        Avg Daily Revenue (Today) = CALCULATE([Avg Daily Revenue],ALLSELECTED(Dates[Date]))
+
+    (g) Remaining Year Forecast:
+
+        Remaining Days Forecast = [Remaining Days]*[Avg Daily Revenue (Today)]
+    
+    (h) Total Running Total + Forecast (i.e. From 30 sept onwards what should be projected revenue)
+
+        Running Total + Forecast = [Running Total Revenue]+[Remaining Days Forecast]
+
+- Step 3 : Add Map (Revenue and YOY Difference by Store Location)
+
+    (a) [Location: Store City], [BubbleSize: YTD Revenue]
+        
+    (b)  Visual -- Bars -- fx -- Gradient -- YOY Difference 2 -- OK
+
+    (c) Add New Worksheet to use as Tooltip (Store Tooltip) (Hide it)
+
+            Visualization -- Format Page -- Page Information -- Allow use as ToolTip
+            Format your Report page -- Canvas Setting -- Height (500) -- Width (910)
+    (d) Add cards:-- Store Name, Store Location, YOY Difference, Previous YTD Revenue, YTD Revenue
+
+    (e) Add Bar Chart:-- Top 10 Products by YTD Revenue,  Filter -- Filter Type (Top N)-- Top 10 -- Value (YTD Revenue), Format Bar Color Condition by YTD Revenue
+
+    (f) Add Bar Chart:-- Bottom 5 Products by YOY Revenue Growth, Filter -- Filter Type (Top N)-- Bottom 5 -- Value (YOY Difference 2), Format Bar Color Condition by YOY Difference 2
+
+    (g) Goto Map in Store Page -- General -- Tooltips -- Page (Store Tooltip)
+
+- Step 4 : Add Line Chart (2023 Projected Revenue based on YTD AVG Daily Revenue (vs Goal))
+
+    (a) Home -- Enter Data -- Name (_Measures_03) -- Load.
+
+    (b) Create New measures
+
+        Inventory in Hand = SUM(Inventory[Stock_On_Hand])
+     
+    (c) Hide column01
+    
+    (d) Matrix Table : [Rows:Store Name, Product Name], [Value: Inventory in Hand]
+  
+- Step 5 : To Know many days of Inventory is left Add Matrix (Stores low on Top Revenue Product Inventory)
+  
+    (a) To calculate max date (i.e. 30 Sept 2023), create measure
+
+        Max Sales Date = CALCULATE(MAX(Sales[Date]),ALLSELECTED(Sales))
+
+    (b) To calculate avg daily units sold in last 30 days, Create measure and add to the matrix table
+
+        Avg Daiy Units Sold = CALCULATE(AVERAGEX(ALLSELECTED(Dates[Date]),[Units]),DATESBETWEEN(Dates[Date],[Max Sales Date]-30, [Max Sales Date]))
+     
+    (c) To calculate days of inventory left, Create measure and add to the matrix table
+
+        Days of Inventory Left = DIVIDE([Inventory in Hand],[Avg Daiy Units Sold])
+
+    
+- Step 6 : To find Inventory left for Top 5 product ranked on Revenue
+     
+    (a) To rank product based on revenue, create measure
         if(airline_passenger_satisfaction[Age]<=50, "25-50 (50 included)",
         
         if(airline_passenger_satisfaction[Age]<=75, "50-75 (75 included)",
