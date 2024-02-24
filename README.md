@@ -187,19 +187,52 @@ At Last format complete page for colours and gradients accordingly
 
 - Step 4 : Add Matrix (Stores low on Top Revenue Product Inventory)
 
-    (a) Column Chart : [X- Product Name], [Y- YOY Difference 2]
+    (a) Home -- Enter Data -- Name (_Measures_03) -- Load.
 
-    (b) Format Bar colour condition according to YOY Difference 2
-  
-    (c) Add Zoom Slider 
+    (b) Create New measures
 
-        Format your visual -- Zoom Slider -- On
+        Inventory in Hand = SUM(Inventory[Stock_On_Hand])
+     
+    (c) Hide column01
+    
+    (d) Matrix Table : [Rows:Store Name, Product Name], [Value: Inventory in Hand]
   
+- Step 5 : To Know many days of Inventory is left Add Matrix (Stores low on Top Revenue Product Inventory)
+  
+    (a) To calculate max date (i.e. 30 Sept 2023), create measure
+
+        Max Sales Date = CALCULATE(MAX(Sales[Date]),ALLSELECTED(Sales))
+
+    (b) To calculate avg daily units sold in last 30 days, Create measure and add to the matrix table
+
+        Avg Daiy Units Sold = CALCULATE(AVERAGEX(ALLSELECTED(Dates[Date]),[Units]),DATESBETWEEN(Dates[Date],[Max Sales Date]-30, [Max Sales Date]))
+ [Stock_On_Hand])
+     
+    (c) To calculate days of inventory left, Create measure and add to the matrix table
+
+        Days of Inventory Left = DIVIDE([Inventory in Hand],[Avg Daiy Units Sold])
 
     
-    Age Group = 
-        
-        if(airline_passenger_satisfaction[Age]<=25, "0-25 (25 included)",
+- Step 6 : To find Inventory left for Top 5 product ranked on Revenue
+     
+    (a) To rank product based on revenue, create measure
+
+        Rank YTD Revenue = RANKX(ALLSELECTED(Products[Product_Name]),[YTD Revenue])
+ 
+    (b) To Filter Rank Matrix, Add this measure to filter tab of table and select “Filter Rank Matrix is 1”
+
+        Filter Rank Matrix = IF([Rank YTD Revenue]<=5,1,0)
+    (c) Format the Matrix Table
+    
+    (d) To Filter out blanks in Days of Inventory edit its measure
+    
+    Filter "Days of Inventory Left is less than 1 and is not Blank"
+
+        Days of Inventory Left = IF([Avg Daiy Units Sold]=0,BLANK()),
+                                 DIVIDE([Inventory in Hand],[Avg Daiy Units Sold])
+ 
+     (e) Format your Visual -- Row Header -- Option -- Off (Stepped layout) 
+ 
         
         if(airline_passenger_satisfaction[Age]<=50, "25-50 (50 included)",
         
