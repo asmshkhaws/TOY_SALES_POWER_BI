@@ -290,84 +290,79 @@ At Last format complete page for colours and gradients accordingly
 
 - Step 4 : Add Line Chart (2023 Projected Revenue based on YTD AVG Daily Revenue (vs Goal))
 
-    (a) Home -- Enter Data -- Name (_Measures_03) -- Load.
-
-    (b) Create New measures
-
-        Inventory in Hand = SUM(Inventory[Stock_On_Hand])
-     
-    (c) Hide column01
+    (a) Add Line Chart: [X- Date], [Y- Running Total + Forecast], Add constant line of goal in line chart
     
-    (d) Matrix Table : [Rows:Store Name, Product Name], [Value: Inventory in Hand]
+    (b) Home -- Enter Data -- Name (_Measures_05) -- Load.
+
+    (c) To add [Actual Revenue] + [Forecasted Revenue] (i.e. Running Total + Forecast) Y axis in Line Chart
+
+        Projection - YTD Revenue = IF([Revenue]<>BLANK(),BLANK(),[Running Total + Forecast])
+
+    Now add [Running Total Revenue](Measure_02) and [Projection - YTD Revenue](Measure_05) in Y axis of Line Chart.
+     
+    (c) To remove extra line of [Running Total Revenue](Measure_02) from chart 
+
+        Running Total Revenue Stop = IF([Revenue]=BLANK(),BLANK(),[Running Total Revenue])
+
+    Now interchange [Running Total Revenue Stop] with [Running Total Revenue] in Y axis
+    
+    (d) To add marker(dot) at Today and Max Forecast Date
+
+    For Today
+
+        IF(SELECTEDVALUE(Dates[Date])=CALCULATE(MAX(Sales[Date]),ALLSELECTED(Dates[Date])),[Running Total Revenue],BLANK())
+
+    Now add [Current YTD Revenue](Measure_05) in Y axis of Line Chart.
   
-- Step 5 : To Know many days of Inventory is left Add Matrix (Stores low on Top Revenue Product Inventory)
+    For Max Forecast Date there are two measures:
+
+    1st to calculate max date (31/12/2023)
+
+        Max Forecast Date = MAXX(ALLSELECTED(Dates[Date]),CALCULATE(MAX(Dates[Date])))
+    2nd for Forecasted Amount
+
+        End of Year Projection = IF(SELECTEDVALUE(Dates[Date])=[Max Forecast Date],[Running Total + Forecast],BLANK())
+
+    Now add [End of Year Projection](Measure_05) in Y axis of Line Chart.
+- Step 5 : Format Forecast Chart (2023 Projected Revenue based on YTD AVG Daily Revenue (vs Goal))
   
-    (a) To calculate max date (i.e. 30 Sept 2023), create measure
+    (a) Rename Legends in Y axis 
 
-        Max Sales Date = CALCULATE(MAX(Sales[Date]),ALLSELECTED(Sales))
-
-    (b) To calculate avg daily units sold in last 30 days, Create measure and add to the matrix table
-
-        Avg Daiy Units Sold = CALCULATE(AVERAGEX(ALLSELECTED(Dates[Date]),[Units]),DATESBETWEEN(Dates[Date],[Max Sales Date]-30, [Max Sales Date]))
+- Step 6 : Adding Other Items on Dashboard
      
-    (c) To calculate days of inventory left, Create measure and add to the matrix table
+    (a) Add New Parameter (Slider)
 
-        Days of Inventory Left = DIVIDE([Inventory in Hand],[Avg Daiy Units Sold])
+    Modelling -- min(6000000) -- max(12000000) – ok
 
+    Move Parameter value (Interactive Goal) to Measure_05
+
+    Select Chart – add further analysis to visual – constant line -- fx – Interactive Goal
+
+    (b) Add New Parameter2 (Slider)
     
-- Step 6 : To find Inventory left for Top 5 product ranked on Revenue
-     
-    (a) To rank product based on revenue, create measure
-        if(airline_passenger_satisfaction[Age]<=50, "25-50 (50 included)",
-        
-        if(airline_passenger_satisfaction[Age]<=75, "50-75 (75 included)",
-        
-        "75-100 (100 included)")))
-        
-Snap of new calculated column ,
+    Modelling -- min(6000000) -- max(12000000) – ok
 
-![Snap_1](https://user-images.githubusercontent.com/102996550/174089602-ab834a6b-62ce-4b62-8922-a1d241ec240e.jpg)
+    Move Parameter value (Interactive Goal) to Measure_05
 
-        
-- Step 15 : New measure was created to find total count of customers.
+    Edit Avg Daily Revenue (Today)[Measure_04] to:
 
-Following DAX expression was written for the same,
-        
-        Count of Customers = COUNT(airline_passenger_satisfaction[ID])
-        
-A card visual was used to represent count of customers.
+        Avg Daily Revenue (Interacted) = 'Parameter 2'[Parameter Value]
 
-![Snap_Count](https://user-images.githubusercontent.com/102996550/174090154-424dc1a4-3ff7-41f8-9617-17a2fb205825.jpg)
+    Format Both Slider Sets
 
+    (c) Add 3 Card Charts: Progress Towards Goal, Interactive Goal, Running Total + Forecast
+
+    (d) To add to Progress Towards Projected Goal Card
+
+        Progress Towards Projected Goal = DIVIDE([Running Total + Forecast],[Interactive Goal])
+    To add conditional colour to card
         
- - Step 16 : New measure was created to find  % of customers,
- 
- Following DAX expression was written to find % of customers,
- 
-         % Customers = (DIVIDE(airline_passenger_satisfaction[Count of Customers], 129880)*100)
- 
- A card visual was used to represent this perecntage.
- 
- Snap of % of customers who preferred business class
- 
- ![Snap_Percentage](https://user-images.githubusercontent.com/102996550/174090653-da02feb4-4775-4a95-affb-a211ca985d07.jpg)
+        Card Color Progress = IF([Progress Towards Projected Goal]>=1, "#14967C", "#F6AB09")
+    Change effect background fx – field value – Card Color Progress
 
  
- - Step 17 : New measure was created to calculate total distance travelled by flights & a card visual was used to represent total distance.
+ - Step 7 : The report was then published to Power BI Service.
  
- Following DAX expression was written to find total distance,
- 
-         Total Distance Travelled = SUM(airline_passenger_satisfaction[Flight Distance])
-    
- A card visual was used to represent this total distance.
- 
- 
- ![Snap_3](https://user-images.githubusercontent.com/102996550/174091618-bf770d6c-34c6-44d4-9f5e-49583a6d5f68.jpg)
- 
- - Step 18 : The report was then published to Power BI Service.
- 
- 
-![Publish_Message](https://user-images.githubusercontent.com/102996550/174094520-3a845196-97e6-4d44-8760-34a64abc3e77.jpg)
 
 # Snapshot of Dashboard (Power BI Service)
 
@@ -381,7 +376,7 @@ A card visual was used to represent count of customers.
 
 # Insights
 
-A single page report was created on Power BI Desktop & it was then published to Power BI Service.
+A four pages report was created on Power BI Desktop & it was then published to Power BI Service.
 
 Following inferences can be drawn from the dashboard;
 
