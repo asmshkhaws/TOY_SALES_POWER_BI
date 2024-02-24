@@ -364,15 +364,20 @@ At Last format complete page for colours and gradients accordingly
  - Step 7 : The report was then published to Power BI Service.
  
 
-# Snapshot of Dashboard (Power BI Service)
+# Snapshot of Model View
 
-![dashboard_snapo](https://user-images.githubusercontent.com/102996550/174096257-11f1aae5-203d-44fc-bfca-25d37faf3237.jpg)
-
+![Model View Snapshot](https://github.com/asmshkhaws/TOY_SALES_POWER_BI/assets/119579424/21f2a51c-5b4e-465d-bec1-c93b1aba08b8)
  
  # Report Snapshot (Power BI DESKTOP)
 
- 
-![Dashboard_upload](https://user-images.githubusercontent.com/102996550/174074051-4f08287a-0568-4fdf-8ac9-6762e0d8fa94.jpg)
+![Toy_Sales_page-0001](https://github.com/asmshkhaws/TOY_SALES_POWER_BI/assets/119579424/a35337e0-5337-4a82-81e9-4dfe1e70bccd)
+
+![Toy_Sales_page-0002](https://github.com/asmshkhaws/TOY_SALES_POWER_BI/assets/119579424/e9c517b3-0c83-4893-b817-9b865f927350)
+
+![Toy_Sales_page-0003](https://github.com/asmshkhaws/TOY_SALES_POWER_BI/assets/119579424/19a135c3-bbb5-49e5-8c80-dec10261d66a)
+
+![Store Performance](https://github.com/asmshkhaws/TOY_SALES_POWER_BI/assets/119579424/e8e7f3d8-0a5c-4477-a417-ba88a59135fe)
+
 
 # Insights
 
