@@ -15,8 +15,9 @@ This dashboard is designed for Toy Stores looking to uncover which of their stor
 - Step 4 : Similarly "Reference" the "Source" query and connect the "Inventory, Products, Sales, Stores" Tables.
 - Step 5 : Goto Sales
 
-        Merge Queries -- Select Products from drawdown -- select "Product_ID" in both tables (Join kind: Left Outer) -- OK
-        From Products just add columns "Product_Cost", "Product_Price" to Sales Table.  
+    Merge Queries -- Select Products from drawdown -- select "Product_ID" in both tables (Join kind: Left Outer) -- OK
+        
+    From Products just add columns "Product_Cost", "Product_Price" to Sales Table.  
 - Step 6 : Create 3 new columns: 
 
         "Total_Cost"    (Units * Product_Cost)
@@ -65,10 +66,10 @@ This dashboard is designed for Toy Stores looking to uncover which of their stor
     (b) Drag "Sales Data Cap" and drop to filter on all pages "Sales Data Cap is 1" lock and hide it.
 - Step 3 : Add Cards for displaying YOY Difference
 
-    (a) Create New measure in (_Measures_02)
+    (a) Create New measure in (_Measures_02), Convert it to % 
 
         YOY Difference = DIVIDE([YTD Revenue],[Previous YTD Revenue])-1
-        Convert it to % 
+    
     (b) Add YOY Difference to card and format accordingly
 
 - Step 4 : Add Line Chart1:
@@ -89,7 +90,7 @@ This dashboard is designed for Toy Stores looking to uncover which of their stor
   
     (d) Add constant line of goal in line chart: 
     
-        Add further analysis to visual -- constant line -- fx -- field value -- Goal --OK
+    Add further analysis to visual -- constant line -- fx -- field value -- Goal --OK
 
 - Step 4 : Add Card for displaying Goal
 
@@ -151,9 +152,7 @@ At Last format complete page for colours and gradients accordingly
 
     (b) Format Bar colour condition according to YOY Difference 2
   
-    (c) Add Zoom Slider 
-
-        Format your visual -- Zoom Slider -- On
+    (c) Add Zoom Slider, Format your visual -- Zoom Slider -- On
   
 ### 5. Steps for Building a Store Performance Page
            
@@ -175,8 +174,10 @@ At Last format complete page for colours and gradients accordingly
 
     (c) Add New Worksheet to use as Tooltip (Store Tooltip) (Hide it)
 
-            Visualization -- Format Page -- Page Information -- Allow use as ToolTip
-            Format your Report page -- Canvas Setting -- Height (500) -- Width (910)
+    Visualization -- Format Page -- Page Information -- Allow use as ToolTip
+
+    Format your Report page -- Canvas Setting -- Height (500) -- Width (910)
+
     (d) Add cards:-- Store Name, Store Location, YOY Difference, Previous YTD Revenue, YTD Revenue
 
     (e) Add Bar Chart:-- Top 10 Products by YTD Revenue,  Filter -- Filter Type (Top N)-- Top 10 -- Value (YTD Revenue), Format Bar Color Condition by YTD Revenue
@@ -270,25 +271,8 @@ At Last format complete page for colours and gradients accordingly
 
         Running Total + Forecast = [Running Total Revenue]+[Remaining Days Forecast]
 
-- Step 3 : Add Map (Revenue and YOY Difference by Store Location)
 
-    (a) [Location: Store City], [BubbleSize: YTD Revenue]
-        
-    (b)  Visual -- Bars -- fx -- Gradient -- YOY Difference 2 -- OK
-
-    (c) Add New Worksheet to use as Tooltip (Store Tooltip) (Hide it)
-
-            Visualization -- Format Page -- Page Information -- Allow use as ToolTip
-            Format your Report page -- Canvas Setting -- Height (500) -- Width (910)
-    (d) Add cards:-- Store Name, Store Location, YOY Difference, Previous YTD Revenue, YTD Revenue
-
-    (e) Add Bar Chart:-- Top 10 Products by YTD Revenue,  Filter -- Filter Type (Top N)-- Top 10 -- Value (YTD Revenue), Format Bar Color Condition by YTD Revenue
-
-    (f) Add Bar Chart:-- Bottom 5 Products by YOY Revenue Growth, Filter -- Filter Type (Top N)-- Bottom 5 -- Value (YOY Difference 2), Format Bar Color Condition by YOY Difference 2
-
-    (g) Goto Map in Store Page -- General -- Tooltips -- Page (Store Tooltip)
-
-- Step 4 : Add Line Chart (2023 Projected Revenue based on YTD AVG Daily Revenue (vs Goal))
+- Step 3 : Add Line Chart (2023 Projected Revenue based on YTD AVG Daily Revenue (vs Goal))
 
     (a) Add Line Chart: [X- Date], [Y- Running Total + Forecast], Add constant line of goal in line chart
     
@@ -324,11 +308,11 @@ At Last format complete page for colours and gradients accordingly
         End of Year Projection = IF(SELECTEDVALUE(Dates[Date])=[Max Forecast Date],[Running Total + Forecast],BLANK())
 
     Now add [End of Year Projection](Measure_05) in Y axis of Line Chart.
-- Step 5 : Format Forecast Chart (2023 Projected Revenue based on YTD AVG Daily Revenue (vs Goal))
+- Step 4 : Format Forecast Chart (2023 Projected Revenue based on YTD AVG Daily Revenue (vs Goal))
   
     (a) Rename Legends in Y axis 
 
-- Step 6 : Adding Other Items on Dashboard
+- Step 5 : Adding Other Items on Dashboard
      
     (a) Add New Parameter (Slider)
 
@@ -361,7 +345,7 @@ At Last format complete page for colours and gradients accordingly
     Change effect background fx – field value – Card Color Progress
 
  
- - Step 7 : The report was then published to Power BI Service.
+ - Step 6 : The report was then published to Power BI Service.
  
 
 # Snapshot of Model View
