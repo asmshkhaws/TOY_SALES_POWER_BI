@@ -368,16 +368,6 @@ At Last format complete page for colours and gradients accordingly
 
 ![Model View Snapshot](https://github.com/asmshkhaws/TOY_SALES_POWER_BI/assets/119579424/21f2a51c-5b4e-465d-bec1-c93b1aba08b8)
  
- # Report Snapshot (Power BI DESKTOP)
-
-![Toy_Sales_page-0001](https://github.com/asmshkhaws/TOY_SALES_POWER_BI/assets/119579424/a35337e0-5337-4a82-81e9-4dfe1e70bccd)
-
-![Toy_Sales_page-0002](https://github.com/asmshkhaws/TOY_SALES_POWER_BI/assets/119579424/e9c517b3-0c83-4893-b817-9b865f927350)
-
-![Toy_Sales_page-0003](https://github.com/asmshkhaws/TOY_SALES_POWER_BI/assets/119579424/19a135c3-bbb5-49e5-8c80-dec10261d66a)
-
-![Store Performance](https://github.com/asmshkhaws/TOY_SALES_POWER_BI/assets/119579424/e8e7f3d8-0a5c-4477-a417-ba88a59135fe)
-
 
 # Insights
 
@@ -385,81 +375,41 @@ A four pages report was created on Power BI Desktop & it was then published to P
 
 Following inferences can be drawn from the dashboard;
 
-### [1] Total Number of Customers = 129880
+### [1] Revenue Insights
 
-   Number of satisfied Customers (Male) = 28159 (21.68 %)
+![Toy_Sales_page-0001](https://github.com/asmshkhaws/TOY_SALES_POWER_BI/assets/119579424/a35337e0-5337-4a82-81e9-4dfe1e70bccd)
+   Year To Date Revenue = $6,962,074
 
-   Number of satisfied Customers (Female) = 28269 (21.76 %)
+   Previous Year To Date Revenue = $5,320,116
 
-   Number of neutral/unsatisfied customers (Male) = 35822 (27.58 %)
+   Year on Year Difference = 30.9%
 
-   Number of neutral/unsatisfied customers (Female) = 37630 (28.97 %)
+   Goal = $8,500,000
 
+   Progress Towards Goal = 81.9%
 
-           thus, higher number of customers are neutral/unsatisfied.
            
-### [2] Average Ratings
+### [2] Goal Projection Insights
+![Toy_Sales_page-0002](https://github.com/asmshkhaws/TOY_SALES_POWER_BI/assets/119579424/e9c517b3-0c83-4893-b817-9b865f927350)
 
-    a) Baggage Handling - 3.63/5
-    b) Check-in Service - 3.31/5
-    c) Cleanliness - 3.29/5
-    d) Ease of online booking - 2.88/5
-    e) Food & Drink - 3.21/5
-    f) In-flight Entertainment - 3.36/5
-    g) In-flight service - 3.64/5
-    h) In-flight Wifi service - 2.81/5
-    i) Leg room service - 3.37/5
-    j) On-board service - 3.38/5
-    k) Online boarding - 3.33/5
-    l) Seat comfort - 3.44/5
-    m) Departure & arrival convenience - 3.22/5
+Helps us in achieving Goal by providing Avg Daily Sales Revenue Set value.
+
   
-  while calculating average rating, null values have been ignored as they were not relevant for some customers. 
-  
-  These ratings will change if different visual filters will be applied.  
-  
-  ### [3] Average Delay 
-  
-      a) Average delay in arrival(minutes) - 15.09
-      b) Average delay in departure(minutes) - 14.71
-Average delay will change if different visual filters will be applied.
+  ### [3] Products Performance Insights 
+  ![Toy_Sales_page-0003](https://github.com/asmshkhaws/TOY_SALES_POWER_BI/assets/119579424/19a135c3-bbb5-49e5-8c80-dec10261d66a)
 
- ### [4] Some other insights
- 
- ### Class
- 
- 1.1) 47.87 % customers travelled by Business class.
- 
- 1.2) 44.89 % customers travelled by Economy class.
- 
- 1.3) 7.25 % customers travelled by Economy plus class.
- 
-         thus, maximum customers travelled by Business class.
- 
- ### Age Group
- 
- 2.1)  21.69 % customers belong to '0-25' age group.
- 
- 2.2)  52.44 % customers belong to '25-50' age group.
- 
- 2.3)  25.57 % customers belong to '50-75' age group.
- 
- 2.4)  0.31 % customers belong to '75-100' age group.
- 
-         thus, maximum customers belong to '25-50' age group.
-         
-### Customer Type
+Lego Bricks contributes to largest Revenue $1,057,576.
 
-3.1) 18.31 % customers have customer type 'First time'.
+This year Magic Sand 
 
-3.2) 81.69 % customers have customer type 'returning'.
-       
-       thus, more customers have customer type 'returning'.
+Colorbuds generates highest profit of all products i.e. $233,248.
 
-### Type of travel
+Barrel O'Slime is best selling product, 61232 units of it were sold.
 
-4.1) 69.06 % customers have travel type 'Business'.
+ ### [4] Store Performance Insights
+ ![Store Performance](https://github.com/asmshkhaws/TOY_SALES_POWER_BI/assets/119579424/e8e7f3d8-0a5c-4477-a417-ba88a59135fe)
+ 
+Ciudad de Mexico 3 generates highest revenue of all Stores i.e. $260,928
 
-4.2) 30.94 % customers have travel type 'Personal'.
-
-        thus, more customers have travel type 'Business'.
+Culiacan 1 has phenomenal Revenue growth of 103.5% compare to last year
+ 
