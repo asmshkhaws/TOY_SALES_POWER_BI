@@ -1,5 +1,11 @@
 # Toy Sales Dashboard
 
+**Author**: Asim Ejaz Sheikh <br />
+**Email**: asm.shkh@gmail.com <br />
+**Website**: https://asmshkhaws.github.io/Data_Analyst_Website/ <br />
+
+:exclamation: If you find this repository helpful, please consider giving it a :star:. Thanks! :exclamation:
+
 ### Dashboard Link : https://app.powerbi.com/view?r=eyJrIjoiN2Y5YWM5ZWItODUyNC00YWY5LWFmMDYtMGQ5MDZkMmUxN2IwIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9
 
 ## Problem Statement
