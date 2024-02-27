@@ -12,6 +12,10 @@
 
 This dashboard is designed for Toy Stores looking to uncover which of their stores are driving the most business and which product is most popular. This dashboard will help managers make better decisions about sales strategies thus shaping future sales approaches.
 
+## Dataset
+
+Dataset includes Dates, Inventory, Products, Sales, Stores data of Toy Sales for year 2022 and 2023 (upto Sep).
+
 # STEPS:
 ### 1. Steps for Modelling the Datasets
 
