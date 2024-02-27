@@ -14,7 +14,7 @@ This dashboard is designed for Toy Stores looking to uncover which of their stor
 
 ## Dataset
 
-Dataset includes Dates(Dataset/Dates.xlsx), Inventory, Products, Sales, Stores data of Toy Sales for year 2022 and 2023 (upto Sep).
+Dataset includes [Dates](Dataset/Dates.xlsx) , [Inventory](Dataset/inventory.csv) , [Products](Dataset/products.csv) , [Sales](Dataset/sales.csv) , [Stores](Dataset/stores.csv)  data of Toy Sales for year 2022 and 2023 (upto Sep).
 
 # STEPS:
 ### 1. Steps for Modelling the Datasets
