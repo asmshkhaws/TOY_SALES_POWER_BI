@@ -55,7 +55,7 @@ Helps us in achieving Goal by providing Avg Daily Sales Revenue Set value.
 
 Lego Bricks contributes to largest Revenue $1,057,576.
 
-This year Magic Sand 
+Magic Sand has biggest jump 24825.55% in revenue compare to last year
 
 Colorbuds generates highest profit of all products i.e. $233,248.
 
